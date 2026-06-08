@@ -1,6 +1,6 @@
 # Projex — клієнт
 
-React (Vite) + TypeScript + Tailwind CSS + TanStack React Query. Архітектура зібрана за зразком [VKormylo/linkumo](https://github.com/VKormylo/linkumo): сервісний шар поверх axios (`baseService` + `authService`), path-alias `~`, `react-hook-form` + `zodResolver`, контекст авторизації з інтерсепторами, роутер на `createBrowserRouter` з лоадером `authCheck`.
+React (Vite) + TypeScript + Tailwind CSS + TanStack React Query. Архітектура: сервісний шар поверх axios (`baseService` + `authService`), path-alias `~`, `react-hook-form` + `zodResolver`, контекст авторизації з інтерсепторами, роутер на `createBrowserRouter` з лоадером `authCheck`.
 
 ## Структура `src/`
 
