@@ -14,7 +14,7 @@ import UserAvatar from "./UserAvatar";
 import UserRowDropdown from "./UserRowDropdown";
 import CreateUserDialog from "./CreateUserDialog";
 import EditUserDialog from "./EditUserDialog";
-import { formatDate, getUserPrimaryRole, hasRole, roleBadgeClass } from "../utils";
+import { formatDate, getUserPrimaryRole, hasRole, isSuperAdmin, roleBadgeClass } from "../utils";
 
 interface Props {
   users: AdminUserDto[];
@@ -41,6 +41,7 @@ export default function UsersTab({ users, roles }: Props) {
   const adminRoleId = roles.find((r) => r.name === "Admin")?.id ?? null;
   const devRoleId = roles.find((r) => r.name === "Developer")?.id ?? null;
   const roleOptions = useMemo(() => ["", ...roles.map((r) => r.name)], [roles]);
+  const canManageDatabase = isSuperAdmin(currentUser?.email);
 
   const seedMut = useMutation({
     mutationFn: () =>
@@ -114,31 +115,35 @@ export default function UsersTab({ users, roles }: Props) {
           <p className="text-sm text-[#45556c] mt-1">Керування користувачами та ролями системи</p>
         </div>
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setConfirmClear(true)}
-            disabled={clearMut.isPending}
-            className="flex h-9 items-center gap-2 rounded-lg border border-red-200 bg-white px-4 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-              <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
-            </svg>
-            {clearMut.isPending ? "Очищення..." : "Очистити БД"}
-          </button>
-          <button
-            type="button"
-            onClick={() => seedMut.mutate()}
-            disabled={seedMut.isPending || seedDone}
-            title={seedDone ? "Вже заповнено" : seedMut.isError ? "Помилка (можливо вже заповнено)" : "Заповнити тестовими даними"}
-            className="flex h-9 items-center gap-2 rounded-lg border border-[#e2e8f0] bg-[#f8fafc] px-4 text-sm font-medium text-[#45556c] hover:bg-[#f1f5f9] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-              <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
-              <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
-              <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
-            </svg>
-            {seedMut.isPending ? "Заповнення..." : seedDone ? "Заповнено" : "Заповнити даними"}
-          </button>
+          {canManageDatabase ? (
+            <>
+              <button
+                type="button"
+                onClick={() => setConfirmClear(true)}
+                disabled={clearMut.isPending}
+                className="flex h-9 items-center gap-2 rounded-lg border border-red-200 bg-white px-4 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                  <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+                {clearMut.isPending ? "Очищення..." : "Очистити БД"}
+              </button>
+              <button
+                type="button"
+                onClick={() => seedMut.mutate()}
+                disabled={seedMut.isPending || seedDone}
+                title={seedDone ? "Вже заповнено" : seedMut.isError ? "Помилка (можливо вже заповнено)" : "Заповнити тестовими даними"}
+                className="flex h-9 items-center gap-2 rounded-lg border border-[#e2e8f0] bg-[#f8fafc] px-4 text-sm font-medium text-[#45556c] hover:bg-[#f1f5f9] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                  <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
+                  <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
+                  <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
+                </svg>
+                {seedMut.isPending ? "Заповнення..." : seedDone ? "Заповнено" : "Заповнити даними"}
+              </button>
+            </>
+          ) : null}
           <Button type="button" onClick={() => setShowCreate(true)} className="gap-2">
             <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
               <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
