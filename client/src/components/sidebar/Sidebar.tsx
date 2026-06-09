@@ -5,7 +5,6 @@ import { useAuthContext } from "~/context/authContext";
 import { useClickOutside } from "~/hooks/useClickOutside";
 import AdministrationIcon from "~/assets/icons/administration.svg?react";
 import DashboardIcon from "~/assets/icons/dashboard.svg?react";
-import MyTasksIcon from "~/assets/icons/my-tasks.svg?react";
 import ProjectsIcon from "~/assets/icons/projects.svg?react";
 import SprintsIcon from "~/assets/icons/sprints.svg?react";
 import { LogoIcon, UserIcon, ChevronRightIcon } from "~/components/svg/Svg";
@@ -15,7 +14,6 @@ const NAV = [
   { to: "/projects", icon: <ProjectsIcon />, label: "Проєкти" },
   { to: "/sprints", icon: <SprintsIcon />, label: "Спринти" },
   { to: "/board", icon: <DashboardIcon />, label: "Дошка задач" },
-  { to: "/my-tasks", icon: <MyTasksIcon />, label: "Мої задачі" },
   { to: "/admin", icon: <AdministrationIcon />, label: "Адміністрування" },
 ];
 

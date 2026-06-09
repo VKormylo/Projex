@@ -14,11 +14,7 @@ export function LogoIcon(props: IconProps) {
       {...props}
     >
       <rect width="32" height="32" rx="8" fill="#3B82F6" />
-      <path
-        d="M8 12h6v12H8V12zm10-4h6v16h-6V8z"
-        fill="white"
-        fillOpacity="0.95"
-      />
+      <path d="M8 12h6v12H8V12zm10-4h6v16h-6V8z" fill="white" fillOpacity="0.95" />
     </svg>
   );
 }
@@ -34,10 +30,7 @@ export function UserIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <path
-        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.5 14a4.5 4.5 0 0 1 9 0v.5h-9V14Z"
-        fill="currentColor"
-      />
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.5 14a4.5 4.5 0 0 1 9 0v.5h-9V14Z" fill="currentColor" />
     </svg>
   );
 }
@@ -107,12 +100,7 @@ export function PlusIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <path
-        d="M8 3v10M3 8h10"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
+      <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }
@@ -149,13 +137,7 @@ export function ChevronDownIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <path
-        d="m4 6 4 4 4-4"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="m4 6 4 4 4-4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -189,22 +171,8 @@ export function TasksIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <rect
-        x="3"
-        y="3"
-        width="14"
-        height="14"
-        rx="2"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-      <path
-        d="M7 10l2 2 4-4"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.4" />
+      <path d="M7 10l2 2 4-4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -220,42 +188,10 @@ export function ProjectsNavIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <rect
-        x="2"
-        y="2"
-        width="7"
-        height="7"
-        rx="1.5"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-      <rect
-        x="11"
-        y="2"
-        width="7"
-        height="7"
-        rx="1.5"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-      <rect
-        x="2"
-        y="11"
-        width="7"
-        height="7"
-        rx="1.5"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-      <rect
-        x="11"
-        y="11"
-        width="7"
-        height="7"
-        rx="1.5"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
+      <rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
+      <rect x="11" y="2" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
+      <rect x="2" y="11" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
+      <rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
     </svg>
   );
 }
@@ -271,21 +207,8 @@ export function SprintsIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <rect
-        x="3"
-        y="4"
-        width="14"
-        height="13"
-        rx="2"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-      <path
-        d="M7 2v4M13 2v4M3 8h14"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-      />
+      <rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" strokeWidth="1.4" />
+      <path d="M7 2v4M13 2v4M3 8h14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   );
 }
@@ -301,64 +224,9 @@ export function BoardIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <rect
-        x="2"
-        y="4"
-        width="5"
-        height="12"
-        rx="1.5"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-      <rect
-        x="8"
-        y="4"
-        width="5"
-        height="8"
-        rx="1.5"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-      <rect
-        x="14"
-        y="4"
-        width="5"
-        height="10"
-        rx="1.5"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
-    </svg>
-  );
-}
-
-export function MyTasksIcon(props: IconProps) {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-      {...props}
-    >
-      <path
-        d="M8 10l2 2 4-4"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <rect
-        x="3"
-        y="3"
-        width="14"
-        height="14"
-        rx="2"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
+      <rect x="2" y="4" width="5" height="12" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
+      <rect x="8" y="4" width="5" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
+      <rect x="14" y="4" width="5" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
     </svg>
   );
 }
@@ -374,11 +242,7 @@ export function AdminIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <path
-        d="M10 2a8 8 0 1 0 0 16A8 8 0 0 0 10 2Z"
-        stroke="currentColor"
-        strokeWidth="1.4"
-      />
+      <path d="M10 2a8 8 0 1 0 0 16A8 8 0 0 0 10 2Z" stroke="currentColor" strokeWidth="1.4" />
       <circle cx="10" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.4" />
       <path
         d="M10 2v2.5M10 15.5V18M2 10h2.5M15.5 10H18M4.22 4.22l1.77 1.77M14.01 14.01l1.77 1.77M4.22 15.78l1.77-1.77M14.01 5.99l1.77-1.77"
@@ -401,18 +265,8 @@ export function EditIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <path
-        d="M9.5 2 L12 4.5 L4.5 12 L2 12 L2 9.5 Z"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 3.5l2.5 2.5"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        strokeLinecap="round"
-      />
+      <path d="M9.5 2 L12 4.5 L4.5 12 L2 12 L2 9.5 Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+      <path d="M8 3.5l2.5 2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
     </svg>
   );
 }
@@ -428,26 +282,9 @@ export function ArchiveIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <rect
-        x="1"
-        y="2"
-        width="12"
-        height="3"
-        rx="1"
-        stroke="currentColor"
-        strokeWidth="1.3"
-      />
-      <path
-        d="M2 5v6a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5"
-        stroke="currentColor"
-        strokeWidth="1.3"
-      />
-      <path
-        d="M5.5 8h3"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        strokeLinecap="round"
-      />
+      <rect x="1" y="2" width="12" height="3" rx="1" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M2 5v6a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M5.5 8h3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
     </svg>
   );
 }
@@ -485,12 +322,7 @@ export function XIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <path
-        d="m4 4 8 8M12 4 4 12"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-      />
+      <path d="m4 4 8 8M12 4 4 12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   );
 }
@@ -554,13 +386,7 @@ export function ChevronRightIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <path
-        d="m6 4 4 4-4 4"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="m6 4 4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -576,21 +402,8 @@ export function CalendarIcon(props: IconProps) {
       aria-hidden
       {...props}
     >
-      <rect
-        x="1"
-        y="2"
-        width="10"
-        height="9"
-        rx="1.5"
-        stroke="currentColor"
-        strokeWidth="1.2"
-      />
-      <path
-        d="M4 1v2M8 1v2M1 5h10"
-        stroke="currentColor"
-        strokeWidth="1.2"
-        strokeLinecap="round"
-      />
+      <rect x="1" y="2" width="10" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.2" />
+      <path d="M4 1v2M8 1v2M1 5h10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
     </svg>
   );
 }

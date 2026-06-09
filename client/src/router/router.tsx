@@ -14,7 +14,6 @@ import Projects from '~/pages/projects/Projects'
 import Sprints from '~/pages/sprints/Sprints'
 import Board from '~/pages/board/Board'
 import TaskDetail from '~/pages/board/TaskDetail'
-import MyTasks from '~/pages/my-tasks/MyTasks'
 import Admin from '~/pages/admin/Admin'
 import Profile from '~/pages/profile/Profile'
 
@@ -28,7 +27,6 @@ export const routerConfig = (
       <Route path="sprints" element={<Sprints />} />
       <Route path="board" element={<Board />} />
       <Route path="board/:taskId" element={<TaskDetail />} />
-      <Route path="my-tasks" element={<MyTasks />} />
       <Route path="admin" element={<Admin />} />
       <Route path="profile" element={<Profile />} />
     </Route>
